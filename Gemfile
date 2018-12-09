@@ -32,6 +32,8 @@ gem 'bulma-rails', '~> 0.7.2'
 gem 'simple_form', '~> 4.1'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'devise', '~> 4.5'
+gem "font-awesome-rails"
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

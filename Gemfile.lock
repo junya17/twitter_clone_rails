@@ -95,6 +95,8 @@ GEM
     eventmachine (1.2.7)
     execjs (2.7.0)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -256,6 +258,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.5)
+  font-awesome-rails
   gravatar_image_tag (~> 1.2)
   guard (~> 2.15)
   guard-livereload (~> 2.5, >= 2.5.2)
