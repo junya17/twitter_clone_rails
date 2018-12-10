@@ -33,6 +33,7 @@ gem 'simple_form', '~> 4.1'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'devise', '~> 4.5'
 gem "font-awesome-rails"
+gem 'acts_as_votable'
 
 
 # Use ActiveStorage variant
@@ -60,6 +61,7 @@ group :development do
   gem 'better_errors', '~> 2.5'
   gem 'guard', '~> 2.15'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2' , require: false
+  gem 'binding_of_caller'
 
 end
 
