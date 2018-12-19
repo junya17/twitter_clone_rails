@@ -2,7 +2,9 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy, :like, :unlike]
 	before_action :authenticate_user!, except: [:index, :show, :destroy, :like, :unlike , :following, :followers]
 
-	def show
+  def show
+    @tweeets = @user.tweeets.all
+    @users = User.all
 	end
 
 	private

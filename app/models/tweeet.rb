@@ -1,4 +1,4 @@
 class Tweeet < ApplicationRecord
-	belongs_to :user, dependent: :destroy
+	belongs_to :user
 	acts_as_votable
 end
