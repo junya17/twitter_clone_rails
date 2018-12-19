@@ -23,7 +23,10 @@
 			<div class="media-content">
 				<div class="content">
 					<strong>
-						<%= tweeet.user.name %></strong><br>
+						<%= link_to user_path(tweeet.user_id) do %>
+						<%= tweeet.user.name %>
+						<% end %>
+					</strong><br>
 					<small>
 						<%= tweeet.user.username %></small><br>
 					<p>
