@@ -1,6 +1,6 @@
 class TweeetsController < ApplicationController
   before_action :set_tweeet, only: [:show, :edit, :update, :destroy, :like, :unlike]
-  before_action :authenticate_user!, except: [:index, :show, :destroy, :like, :unlike , :following, :followers]
+  before_action :authenticate_user!
   
   # GET /tweeets
   # GET /tweeets.json
