@@ -1,12 +1,10 @@
 <% if user_signed_in? %>
-<div class="column">
-	<nav class="panel">
-		<p class="panel-heading">
-			フォロー
-		</p>
-	
+<nav class="panel">
+	<p class="panel-heading">
+		フォロワー
+	</p>
 	<% @users.each do | user |%>
-	<% if current_user.following?(user) %> 
+	<% if current_user.follower?(user) %>
 	<div class="panel-block">
 		<article class="media">
 			<div class="media-left">
@@ -17,14 +15,16 @@
 			<div class="media-content">
 				<div class="content">
 					<p>
-						<strong><%=user.name%></strong>
+						<strong>
+							<%=user.name%></strong>
 						<small>@johnsmith</small>
 					</p>
 				</div>
 			</div>
 		</article>
-	</nav>
-	<% end %>
-	<% end %>
+</nav>
+</div>
+<% end %>
 <% end %>
 
+<% end %>

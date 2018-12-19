@@ -1,19 +1,20 @@
+# frozen_string_literal: true
+
 class TweeetsController < ApplicationController
-  before_action :set_tweeet, only: [:show, :edit, :update, :destroy, :like, :unlike]
+  before_action :set_tweeet, only: %i[show edit update destroy like unlike]
   before_action :authenticate_user!
-  
+
   # GET /tweeets
   # GET /tweeets.json
   def index
-    @tweeets = Tweeet.all.order("created_at DESC")
+    @tweeets = Tweeet.all.order('created_at DESC')
     @tweeet = Tweeet.new
     @users = User.all
   end
 
   # GET /tweeets/1
   # GET /tweeets/1.json
-  def show
-  end
+  def show; end
 
   # GET /tweeets/new
   def new
@@ -21,8 +22,7 @@ class TweeetsController < ApplicationController
   end
 
   # GET /tweeets/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /tweeets
   # POST /tweeets.json
@@ -68,7 +68,7 @@ class TweeetsController < ApplicationController
     @tweeet.liked_by current_user
     respond_to do |format|
       format.html { redirect_back fallback_location: root_path }
-      format.js { render layout:false}
+      format.js { render layout: false }
     end
   end
 
@@ -76,18 +76,19 @@ class TweeetsController < ApplicationController
     @tweeet.unliked_by current_user
     respond_to do |format|
       format.html { redirect_back fallback_location: root_path }
-      format.js { render layout:false}
+      format.js { render layout: false }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tweeet
-      @tweeet = Tweeet.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def tweeet_params
-      params.require(:tweeet).permit(:tweeet)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_tweeet
+    @tweeet = Tweeet.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def tweeet_params
+    params.require(:tweeet).permit(:tweeet)
+  end
 end
