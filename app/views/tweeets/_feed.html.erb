@@ -30,45 +30,23 @@
 						<%= tweeet.tweeet %>
 					</p>
 				</div>
-				<div class="level-left likes">
-					<% if user_signed_in? %>
-
-					<% if current_user.liked? tweeet %>
-					<%= link_to unlike_tweeet_path(tweeet), method: :put, class: "unlike_tweeet_path" do %>
-					<span class="icon"><i class="fa fa-heart has-test-primary"></i></span>
-					<span class="vote_count">
-						<%= tweeet.get_likes.size %></span>
-					<% end %>
-					<% else %>
-					<%= link_to like_tweeet_path(tweeet), method: :put, class: "like_tweeet_path" do %>
-					<span class="icon"><i class="fa fa-heart"></i></span>
-					<span class="vote_count">
-						<%= tweeet.get_likes.size %></span>
-					<% end %>
-					<% end %>
-					<% else %>
-					<%= link_to like_tweeet_path(tweeet), method: :put, class: "like_tweeet_path" do %>
-					<span class="icon"><i class="fa fa-heart"></i></span>
-					<span class="vote_count">
-						<%= tweeet.get_likes.size %></span>
-					<% end %>
-					<% end %>
-				</div>
-				<% if user_signed_in? && current_user.id == tweeet.user_id %>
 				<nav class="level">
 					<div class="level-left is-mobile">
 						<%= link_to tweeet, class: "level-item" do %>
 						<span class="icon"><i class="fa fa-link" aria-hidden="ture"></i></span>
 						<% end %>
+						<% if user_signed_in? && current_user.id == tweeet.user_id %>
 						<%= link_to edit_tweeet_path(tweeet), clas: "level-item" do %>
 						<span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
 						<% end %>
 						<%= link_to tweeet, method: :delete, data: { confirm: "Are you sure you want to delete this tweeet?" } do %>
 						<span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-						<%end%>
+						<% end %>
+						<% end %>
+						<%= render 'likes', tweeet: tweeet %>
 					</div>
 				</nav>
-				<% end %>
+				
 			</div>
 		</article>
 	</div>
