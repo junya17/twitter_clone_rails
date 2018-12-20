@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 	private
 	def detect_device
-		case params[:type]
+		case request.user_agent
 		when 'mobile'
 			request.variant = :mobile
 		when 'tablet'
