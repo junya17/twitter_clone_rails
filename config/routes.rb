@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   root 'tweeets#index'
   resources :relationships, only: %i[create destroy]
   resources :users
+  resources :news
 end

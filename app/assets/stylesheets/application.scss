@@ -22,7 +22,7 @@
 
 
  // round images 
- .image {
+.image {
 	 border-radius: 50%;
  	img{
 		 border-radius: 50%;
@@ -48,4 +48,11 @@
 	margin: 0.5rem 0 ;
 }
 
-
+.news {
+	.image {
+		border-radius: 0;
+		img{
+			border-radius: 0;
+	   }
+   }
+}
