@@ -1,13 +1,21 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy like unlike]
-  before_action :authenticate_user!, except: %i[index show destroy like unlike following followers]
+  before_action :set_user, only: %i[show edit update destroy like unlike follow follower]
+  before_action :authenticate_user!, except: %i[index show destroy like unlike following followers follow follower]
 
   def show
     @tweeets = @user.tweeets.all
     @users = User.all
    end
+
+  def follow
+    @users = User.all
+  end
+
+  def follower
+    @users = User.all
+  end
 
   private
 

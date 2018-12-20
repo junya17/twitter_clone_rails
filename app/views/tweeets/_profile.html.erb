@@ -12,18 +12,24 @@
 					<div class="content">
 						<p>
 							<strong>
-								<%= current_user.name %></strong><br>
+								<%= link_to user_path(current_user) do %>
+								<%= current_user.name %>
+								<% end %>
+							</strong><br>
 							<small>
-								<%= current_user.username %></small>
+								<%= link_to user_path(current_user) do %>
+								@<%= current_user.username %>
+								<% end %>
+							</small>
 						</p>
 					</div>
 				</div>
 			</article>
 		</div>
 		<div class="panel-block">
-				<section class="media">
-						<%= render 'shared/stats' %>
-				</section>
-			</div>
+			<section class="media">
+				<%= render 'shared/stats' %>
+			</section>
+		</div>
 	</nav>
 </div>
